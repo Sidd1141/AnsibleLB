@@ -1,0 +1,16 @@
+---
+# handlers file for projectlb
+- name: start the haproxy service
+  service:
+    name: "haproxy"
+    state: restarted
+
+- name: haproxy installed
+  debug:
+    msg: "haproxy has been installed in lb target node"
+
+- name: config file copied
+  debug:
+    msg: "config file for haproxy copied in lb node"
+
+

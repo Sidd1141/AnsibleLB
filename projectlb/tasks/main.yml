@@ -1,0 +1,20 @@
+---
+# tasks file for project
+- name: task to install haproxy type lb
+  package:
+     name: "{{ item }}"
+     state: present 
+  loop:
+     - "haproxy"
+     - "php"
+    
+  notify: "haproxy installed"  
+- name: copying the configuration file to lb as jinja2 template
+  template:
+    src: "local.cfg.j2" 
+    dest: "/etc/haproxy/haproxy.cfg"
+  notify: "start the haproxy service"
+  notify: "config file copied"
+  
+
+

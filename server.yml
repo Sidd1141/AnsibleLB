@@ -1,0 +1,6 @@
+
+- name: yaml file for webserver installion on  target nodes
+  hosts: prod
+  become: true
+  roles:
+  - projectserver

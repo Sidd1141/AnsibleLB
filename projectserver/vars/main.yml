@@ -1,0 +1,4 @@
+---
+# vars file for projectserver
+
+sourceCode: "/home/ec2-user/ansible294/projectserver/files"

@@ -1,0 +1,6 @@
+- name: yaml file for haproxy lb installation
+  become: true
+  hosts: lb
+  roles:
+  - projectlb
+

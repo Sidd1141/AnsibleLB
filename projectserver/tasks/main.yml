@@ -1,0 +1,22 @@
+---
+# tasks file for projectserver
+
+
+- name: task to install httpd webapp  and php in prod server
+  package: 
+    name: "{{ item }}"
+    state: present
+  loop:
+    - httpd
+    - php
+
+- name: copy php file to webserver
+  copy:
+    src: "{{ sourceCode }}"    #sourceCode variable is mutable, will be avaiable in vars folder
+    dest: "/var/www/html" 
+
+
+- name: start the service
+  service:
+    name: "httpd"
+    state: started
